@@ -11,9 +11,14 @@ export const withCss: DecoratorFunction = (StoryFn, context) => {
     const channel = addons.getChannel();
     channel.emit(EVENTS.CLEAR);
     if (myAddon) {
-      document.querySelector('#root').addEventListener('click', getCss);
-      return () =>
-        document.querySelector('#root').removeEventListener('click', getCss);
+      // Focus on <html> element instead of #root
+      const eventType = 'click'
+      const targetElement = window.document.querySelector('html');
+      
+      if (targetElement) {
+        targetElement.addEventListener(eventType, getCss);
+        return () => targetElement.removeEventListener(eventType, getCss);
+      }
     }
   }, [context.id, myAddon]);
 
