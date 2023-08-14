@@ -13,7 +13,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 import { useGlobals } from '@storybook/addons';
 import { addons } from '@storybook/addons';
 import { useEffect } from '@storybook/addons';
-import { getCss } from './getCss';
+import { getCss } from './utils/processing/getCss';
 import { EVENTS } from './constants';
 export var withCss = function withCss(StoryFn, context) {
   var _useGlobals = useGlobals(),

@@ -1,7 +1,7 @@
 import { DecoratorFunction, useGlobals } from '@storybook/addons';
 import { addons } from '@storybook/addons';
 import { useEffect } from '@storybook/addons';
-import { getCss } from './getCss';
+import { getCss } from './utils/processing/getCss';
 import { EVENTS } from './constants';
 
 export const withCss: DecoratorFunction = (StoryFn, context) => {

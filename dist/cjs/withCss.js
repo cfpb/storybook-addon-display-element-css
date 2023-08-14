@@ -7,7 +7,7 @@ exports.withCss = void 0;
 
 var _addons = require("@storybook/addons");
 
-var _getCss = require("./getCss");
+var _getCss = require("./utils/processing/getCss");
 
 var _constants = require("./constants");
 
